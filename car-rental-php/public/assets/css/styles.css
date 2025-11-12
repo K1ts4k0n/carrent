@@ -1,0 +1,132 @@
+
+:root{
+  --bg: #0b1020;
+  --bg2: #121a35;
+  --accent: #6ee7ff;
+  --accent-2: #a78bfa;
+  --text: #e6e9f2;
+  --muted: #b6bdd3;
+  --card: rgba(255,255,255,.06);
+  --card-border: rgba(255,255,255,.12);
+  --success:#22c55e;
+  --danger:#ef4444;
+  --warning:#f59e0b;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'TH Sarabun New', 'Noto Sans Thai', Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% -10%, #1e293b 0%, transparent 60%),
+              radial-gradient(1000px 500px at 90% 10%, #0ea5e9 0%, transparent 50%),
+              linear-gradient(180deg, var(--bg), var(--bg2));
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.nav{
+  position:sticky; top:0; z-index:50; backdrop-filter: blur(10px);
+  background:linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.2));
+  border-bottom:1px solid var(--card-border);
+}
+.nav-inner{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px}
+.brand-badge{
+  width:36px;height:36px;border-radius:10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display:grid;place-items:center;color:#0b1020;font-weight:800;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 0 14px rgba(255,255,255,.25);
+}
+.nav-links{display:flex;gap:18px;font-weight:600;color:var(--muted)}
+.nav a.active{color:var(--accent)}
+.btn{
+  padding:10px 16px;border-radius:12px;border:1px solid var(--card-border);
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  color:var(--text);font-weight:700;transition:all .25s ease;display:inline-flex;gap:10px;align-items:center;
+}
+.btn:hover{transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,.35)}
+.btn-primary{border-color:transparent;background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b1020}
+.btn-danger{background:linear-gradient(135deg, var(--danger), #f87171); color:#120c0c;border:none}
+.badge{padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid var(--card-border);font-size:12px;color:var(--muted)}
+.hero{
+  padding:72px 24px 36px;border-bottom:1px solid var(--card-border);
+  background: radial-gradient(600px 300px at 80% 40%, rgba(110,231,255,.1), transparent 60%);
+}
+.hero h1{font-size:40px;margin:0 0 12px;line-height:1.1}
+.hero p{color:var(--muted);max-width:720px}
+.grid{display:grid;gap:18px}
+.grid.cards{grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))}
+.card{
+  border:1px solid var(--card-border); background:var(--card);
+  border-radius:16px; overflow:hidden; transition: transform .25s ease, box-shadow .25s ease, border .25s ease;
+}
+.card:hover{transform:translateY(-3px); border-color: rgba(110,231,255,.5); box-shadow: 0 15px 35px rgba(0,0,0,.35)}
+.card .media{aspect-ratio: 16/10; background:linear-gradient(135deg, #111827, #0f172a); display:grid; place-items:center}
+.card .body{padding:16px}
+.input, select, textarea{
+  width:100%; padding:12px 14px; border-radius:12px;
+  border:1px solid var(--card-border); background: rgba(255,255,255,.04); color: var(--text);
+}
+.field{display:grid;gap:8px;margin:10px 0}
+.kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#0f172a;border:1px solid var(--card-border);padding:2px 6px;border-radius:6px;color:#93c5fd}
+.table{width:100%;border-collapse:separate;border-spacing:0 12px}
+.table th{color:var(--muted);font-weight:600;text-align:left;padding:6px 10px}
+.table td{padding:12px 10px;background:var(--card);border:1px solid var(--card-border)}
+.table tr td:first-child{border-radius:12px 0 0 12px}
+.table tr td:last-child{border-radius:0 12px 12px 0}
+.footer{color:#97a0bf;border-top:1px solid var(--card-border);padding:18px 24px;text-align:center}
+.searchbar{display:grid;grid-template-columns:repeat(5,1fr); gap:12px;align-items:end}
+@media (max-width: 900px){
+  .searchbar{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:32px}
+}
+.toast{position:fixed;right:18px;bottom:18px;padding:14px 18px;border-radius:12px;background:#0f172a;border:1px solid var(--card-border);box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.alert{padding:12px 14px;border-radius:12px;border:1px solid var(--card-border);background:rgba(239,68,68,.1);color:#fecaca}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.badge-approved {
+  border: 1px solid #22c55e;
+  color: #22c55e;
+  background: rgba(34,197,94,0.1);
+}
+
+.badge-rejected {
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  background: rgba(239,68,68,0.1);
+}
+
+.badge-pending {
+  border: 1px solid #f59e0b;
+  color: #f59e0b;
+  background: rgba(245,158,11,0.1);
+}
+
+.badge-cancelled,
+.badge-returned {
+  border: 1px solid #6b7280;
+  color: #6b7280;
+  background: rgba(107,114,128,0.1);
+}
+
+.btn-approve {
+  border: 1px solid #3b82f6;   /* กรอบฟ้า */
+  color: #3b82f6;              /* ตัวอักษรฟ้า */
+  background: rgba(59,130,246,0.1); /* พื้นหลังฟ้าใส */
+}
+.btn-approve:hover {
+  background: rgba(59,130,246,0.2);
+}
+
+
+/* สถานะการจอง */
+.badge-approved  { border:1px solid #22c55e; color:#22c55e; background:rgba(34,197,94,.1); }
+.badge-rejected  { border:1px solid #ef4444; color:#ef4444; background:rgba(239,68,68,.1); }
+.badge-pending   { border:1px solid #f59e0b; color:#f59e0b; background:rgba(245,158,11,.1); }
+.badge-cancelled,
+.badge-returned  { border:1px solid #6b7280; color:#6b7280; background:rgba(107,114,128,.1); }
+
+/* สถานะการชำระเงิน */
+.badge-paid      { border:1px solid #22c55e; color:#22c55e; background:rgba(34,197,94,.1); }
+.badge-unpaid    { border:1px solid #f59e0b; color:#f59e0b; background:rgba(245,158,11,.1); }
+.badge-refunded  { border:1px solid #3b82f6; color:#3b82f6; background:rgba(59,130,246,.1); }
